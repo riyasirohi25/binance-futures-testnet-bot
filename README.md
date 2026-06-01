@@ -16,18 +16,19 @@ A Python CLI application that places Market and Limit orders on Binance Futures 
 
 ## Project Structure
 
+```text
 trading_bot/
 ├── bot/
-│ ├── client.py
-│ ├── orders.py
-│ ├── validators.py
-│ └── logging_config.py
+│   ├── client.py
+│   ├── orders.py
+│   ├── validators.py
+│   └── logging_config.py
 ├── logs/
-│ └── trading.log
+│   └── trading.log
 ├── cli.py
 ├── requirements.txt
 └── README.md
-
+```
 ## Installation
 
 Create virtual environment:
@@ -71,3 +72,14 @@ logs/trading.log
 * User has a Binance Futures Testnet account.
 * API credentials are valid.
 * Testnet funds are available.
+
+## Error Handling
+
+The application validates:
+
+- Valid order side (BUY/SELL)
+- Valid order type (MARKET/LIMIT)
+- Positive quantity values
+- Price requirement for LIMIT orders
+
+API and network exceptions are handled and logged.
